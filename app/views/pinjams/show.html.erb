@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @pinjam.nama %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @pinjam.phone %>
+</p>
+
+<p>
+  <strong>Alamat:</strong>
+  <%= @pinjam.alamat %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @pinjam.book_id %>
+</p>
+
+<%= link_to 'Edit', edit_pinjam_path(@pinjam) %> |
+<%= link_to 'Back', pinjams_path %>

@@ -1,0 +1,1 @@
+json.partial! "pinjams/pinjam", pinjam: @pinjam

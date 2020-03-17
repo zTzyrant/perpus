@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pinjams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Phone</th>
+      <th>Alamat</th>
+      <th colspan="2">Book</th>
+      <th colspan="3">Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pinjams.each do |pinjam| %>
+    
+      <tr>
+        <td><%= pinjam.nama %></td>
+        <td><%= pinjam.phone %></td>
+        <td><%= pinjam.alamat %></td>
+        <td><%= pinjam.book_id %></td>
+
+        <td>
+        <% @books.each do |book| %>
+        <%= book.judul_buku %>      
+        <% end %>  
+        </td>
+        <td><%= link_to 'Show', pinjam %></td>
+        <td><%= link_to 'Edit', edit_pinjam_path(pinjam) %></td>
+        <td><%= link_to 'Destroy', pinjam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pinjam', new_pinjam_path, class: 'btn btn-outline-primary text-dark', role: 'button' %>
+<%= link_to 'Back', welcome_index_path, class: 'btn btn-outline-danger text-dark', role: 'button' %>

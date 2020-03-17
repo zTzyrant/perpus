@@ -1,0 +1,39 @@
+<%= form_with(model: pinjam, local: true) do |form| %>
+  <% if pinjam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pinjam.errors.count, "error") %> prohibited this pinjam from being saved:</h2>
+
+      <ul>
+        <% pinjam.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nama %>
+    <%= form.text_field :nama %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alamat %>
+    <%= form.text_field :alamat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_id %>
+    
+    <%= form.select "book_id", options_for_select({ "The Hamlet" => "1", "The Tempest" => "2"} ) %>
+    
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

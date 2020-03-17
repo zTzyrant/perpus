@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+  <h2>Books</h2>       
+  <table class="table table-light table-striped text-center">
+    <thead class="bg-primary">
+    <tr>
+      <th>Judul buku</th>
+      <th>Author</th>
+      <th>Genre buku</th>
+      <th>Rating</th>
+      <th>Opsi</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.judul_buku %></td>
+        <td><%= book.author %></td>
+        <td><%= book.genre_buku %></td>
+        <td><%= book.rating %></td>
+        <td><%= link_to 'Show', book %> |
+        <%= link_to 'Edit', edit_book_path(book) %> |
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Book', new_book_path, class: 'btn btn-outline-primary text-dark', role: 'button' %>
+<%= link_to 'Back', welcome_index_path, class: 'btn btn-outline-danger text-dark', role: 'button' %>
+</div>
+
+
+<br>
+
+
