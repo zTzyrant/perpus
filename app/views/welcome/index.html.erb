@@ -1,17 +1,28 @@
 <style>
-  #main-navbar .nav-link{
-    border-bottom: 5px solid #343a40;
-    color: #e2e1e1;
-  }
-  #main-navbar .nav-link:hover, #main-navbar a.active {
-    border-bottom: 5px solid #117a8b;
-    color: white;
-  }
-  .fakeimg {
+#main-navbar .nav-link {
+  border-bottom: 5px solid #343a40;
+  color: #e2e1e1;
+}
+#main-navbar .nav-link:hover, #main-navbar a.active {
+  border-bottom: 5px solid #117a8b;
+  color: white;
+}
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+#input-box {
+  margin-top: 20px;
+}
+.fakeimg {
     height: 200px;
     background: #aaa;
-  }
-  </style>
+}
+</style>
 
 
 <nav id="main-navbar" class="navbar navbar-expand-md navbar-dark bg-dark py-0">
@@ -34,11 +45,25 @@
           <a class="nav-link p-4 active" href="index.html">Pinjam Buku</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link p-4 active" href="index.html">Home</a>
+          <a class="nav-link p-4 active" href="index.html">Logout</a>
         </li>
       </div>
     </div>
 </nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div id="input-box" class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 bg-dark">
+      <div class="input-group rounded rounded-pill">
+        <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-dark rounded rounded-pill text-white">
+      <div class="input-group-append">
+        <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 
 <div class="container" style="margin-top:30px">
   <div class="row">
@@ -62,10 +87,6 @@
     </div>
   </div>
 </div>
-
-<%# <div class="text-center" style="margin-bottom:0">
-  <p>&copy; Library Example 2020</p>
-</div> %>
 
 <footer id="main-footer" class="text-white bg-dark py-4">
   <div class="container">
