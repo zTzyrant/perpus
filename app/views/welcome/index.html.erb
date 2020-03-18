@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto"></ul>
         <li class="nav-item">
-        <%= link_to 'List Buku', books_path(@books),  :class => 'nav-link p-4 active' %>
+        <%= link_to "List Buku", books_path(@books), :class => "nav-link p-4 active" %>
         </li>
         <li class="nav-item">
           <a class="nav-link p-4 active" href="index.html">Pinjam Buku</a>
@@ -52,8 +52,6 @@
       <h5>Create on: Mar 13, 2020</h5>
       <div class="fakeimg">Fake Image</div>
       <p>Perpustakaan ini dibangun berdasarkan keputusan perda no xx tahun xxxx kare kebutuhan masyarakat sekitar yang membutuhakan perpustakaan daerah (umum).</p>
-      <p><%= link_to 'Ingin Melihat List Buku Yang Tersedia ? (Click Me)', books_path(@books),  :class => 'nav-link' %> </p>
-
       <br>
       <h2>Lokasi Perpustakaan</h2>
       <h5>Title description, Sep 2, 2017</h5>
@@ -65,10 +63,37 @@
   </div>
 </div>
 
-<div class="text-center" style="margin-bottom:0">
+<%# <div class="text-center" style="margin-bottom:0">
   <p>&copy; Library Example 2020</p>
-</div>
+</div> %>
 
+<footer id="main-footer" class="text-white bg-dark py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 text-center text-md-left">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <h5>Footer 1</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">a</a></li>
+          <li><a href="#" class="text-white">b</a></li>
+          <li><a href="#" class="text-white">c</a></li>
+          <li><a href="#" class="text-white">d</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 text-center">
+        <h5>Footer 2</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">a</a></li>
+          <li><a href="#" class="text-white">b</a></li>
+          <li><a href="#" class="text-white">c</a></li>
+          <li><a href="#" class="text-white">d</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
