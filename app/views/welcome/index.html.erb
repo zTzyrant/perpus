@@ -30,7 +30,7 @@
     <a class="navbar-brand" href="index.html">
       <span class="d-none" >PERPUS</span>
       <img src="#" class="main-logo d-none d-md-inline" alt="Perpus Logo">
-      <img src="#" class="small-logo d-inline d-md-none alt="perpus logo">
+      <img src="#" class="small-logo d-inline d-md-none" alt="perpus logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
     <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@
         <%= link_to "List Buku", books_path(@books), :class => "nav-link p-4 active" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link p-4 active" href="index.html">Pinjam Buku</a>
+          <%= link_to "List Buku", pinjams_path(@pinjams), :class => "nav-link p-4 active" %>
         </li>
         <li class="nav-item">
           <a class="nav-link p-4 active" href="index.html">Logout</a>
