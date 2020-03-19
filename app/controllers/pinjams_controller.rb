@@ -5,7 +5,9 @@ class PinjamsController < ApplicationController
   # GET /pinjams.json
   def index
     @pinjams = Pinjam.all
-    @books = Book.all
+    @pinjams = Pinjam.select('pinjams.id, pinjams.nama, pinjams.phone, pinjams.alamat, books.judul_buku').joins(:book)
+    @books = Book.joins("INNER JOIN pinjams ON pinjams.book_id = books.id")
+
   end
 
   # GET /pinjams/1

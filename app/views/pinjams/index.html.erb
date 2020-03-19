@@ -14,19 +14,13 @@
   </thead>
 
   <tbody>
+
     <% @pinjams.each do |pinjam| %>
-    
       <tr>
         <td><%= pinjam.nama %></td>
         <td><%= pinjam.phone %></td>
         <td><%= pinjam.alamat %></td>
-        <td><%= pinjam.book_id %></td>
-
-        <td>
-        <% @books.each do |book| %>
-        <%= book.judul_buku %>      
-        <% end %>  
-        </td>
+        <td><%= pinjam.judul_buku %></td>
         <td><%= link_to 'Show', pinjam %></td>
         <td><%= link_to 'Edit', edit_pinjam_path(pinjam) %></td>
         <td><%= link_to 'Destroy', pinjam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
