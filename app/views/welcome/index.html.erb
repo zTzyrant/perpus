@@ -38,15 +38,9 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto"></ul>
-        <li class="nav-item">
         <%= link_to "List Buku", books_path(@books), :class => "nav-link p-4 active" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Pinjam Buku", pinjams_path(@pinjams), :class => "nav-link p-4 active" %>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-4 active" href="index.html">Logout</a>
-        </li>
+        <%= link_to "Pinjam Buku", pinjams_path(@pinjams), :class => "nav-link p-4 active" %>
+        <a class="nav-link p-4 active" href="index.html">Logout</a>
       </div>
     </div>
 </nav>
