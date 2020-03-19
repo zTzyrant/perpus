@@ -4,10 +4,7 @@ class PinjamsController < ApplicationController
   # GET /pinjams
   # GET /pinjams.json
   def index
-    @pinjams = Pinjam.all
     @pinjams = Pinjam.select('pinjams.id, pinjams.nama, pinjams.phone, pinjams.alamat, books.judul_buku').joins(:book)
-    @books = Book.joins("INNER JOIN pinjams ON pinjams.book_id = books.id")
-
   end
 
   # GET /pinjams/1
@@ -72,16 +69,8 @@ class PinjamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pinjam_params
-      params.require(:pinjam).permit(:nama, :phone, :alamat)
-    end
-    def set_book
-      @book = Book.find(params[:id])
+      params.require(:pinjam).permit(:nama, :phone, :alamat, :book_id)
     end
 
-    # Only allow a list of trusted parameters through.
-    def book_params
-      params.require(:book).permit(:judul_buku, :author, :genre_buku, :rating)
-      
-    end
     
 end
