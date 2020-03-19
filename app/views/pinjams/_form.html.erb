@@ -10,30 +10,26 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :nama %>
-    <%= form.text_field :nama %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :alamat %>
-    <%= form.text_field :alamat %>
-  </div>
-
-  <div class="field">
-    <%= form.label :book_id %>
-    
-    <%= form.select "book_id", options_for_select({ "The Hamlet" => "1", "The Tempest" => "2"} ) %>
-    
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.label :nama %>
+      <%= form.text_field :nama, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= form.label :phone %>
+      <%= form.text_field :phone, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= form.label :alamat %>
+      <%= form.text_field :alamat, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= form.label :book_id %>
+      <%= form.select "book_id", options_for_select({ "The Hamlet" => "1", "The Tempest" => "2"}) %>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Submit', :class => 'btn btn-link bg-primary mt-3 text-light btn-block' %>        
+    </div>
+    <div class="field">
+      <%= link_to 'Back',books_path, class: 'btn btn-link bg-danger mt-3 text-light btn-block' %>
+    </div>
+  <% end %>

@@ -15,28 +15,28 @@
     <div class="row">
       <div class="col-sm-12 col-lg-6 offset-lg-3">
         <h1 className="font-weight-normal mb-5"> Add Buku.</h1>
-        <div class="form-group">
+        <div class="field">
           <%= label_tag :judul_buku, "judul buku" %>
-          <%= text_field_tag :judul_buku,nil,class: 'form-control' %>
+          <%= form.text_field :judul_buku, class: 'form-control' %>
         </div>
-        <div class="form-group">
+        <div class="field">
           <%= label_tag :author, "Pengarang" %>
-          <%= text_field_tag :author,nil,class: 'form-control' %>
+          <%= form.text_field :author, class: 'form-control' %>
         </div>
-        <div class="form-group">
+        <div class="field">
           <%= label_tag :genre_buku, "Genre Buku" %>
-          <%= text_field_tag :genre_buku,nil,class: 'form-control' %>
+          <%= form.text_field :genre_buku, class: 'form-control' %>
         </div>
         <div class="field">
           <%= form.label :rating %>
-          <%= form.number_field :rating %>
+          <%= form.number_field :rating, class: 'form-control' %>
         </div>
-      <div class="btn custom-button mt-3">
-        <%= submit_tag %>
-      </div>
-      <div class="btn btn-link mt-3">
-      <%= link_to 'Back',books_path%>
-      </div>
+        <div class="actions">
+          <%= form.submit 'Submit', :class => 'btn btn-link bg-primary mt-3 text-light btn-block' %>        
+        </div>
+        <div class="field">
+          <%= link_to 'Back',books_path, class: 'btn btn-link bg-danger mt-3 text-light btn-block' %>
+        </div>
     </div>
   </div>
 </div>
