@@ -1,1 +1,9 @@
+<% if logged_in? %>
+<% if current_user %>
 <h1>You have access to this page, <%= current_user.username %></h1>
+<% end %>
+<% else %>
+<h1>You don't have access to this page !!!</h1>
+<%= link_to "Register", new_user_path, class: "btn btn-primary text-light" %>
+<%= link_to "Login", login_path, class: "btn btn-danger text-light" %>
+<% end %>
