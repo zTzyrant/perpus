@@ -1,24 +1,19 @@
-# README
+# Perpus With Rails 5
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description 
+This repository is made for learning and under development.
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
 
-* System dependencies
-
-* Configuration
-
-* Database creation
+* Database sqlite
 
 * Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  ```
+  rake db:create
+  rake db:migrate
+  ```
+* How to run
+  ```
+  rails s
+  ```
