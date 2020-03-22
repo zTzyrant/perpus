@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_185955) do
     t.string "author"
     t.string "genre_buku"
     t.integer "rating"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'react-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'file_validators'

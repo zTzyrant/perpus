@@ -1,44 +1,48 @@
 <%= form_with(model: book, local: true) do |form| %>
-  <% if book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+<% if book.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
-      <ul>
+    <ul>
         <% book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <li><%= message %></li>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </ul>
+</div>
+<% end %>
 
-  <div class="container mt-5">
+<div class="container mt-5">
     <div class="row">
-      <div class="col-sm-12 col-lg-6 offset-lg-3">
-        <h1 className="font-weight-normal mb-5"> Add Buku.</h1>
-        <div class="field">
-          <%= label_tag :judul_buku, "judul buku" %>
-          <%= form.text_field :judul_buku, class: 'form-control' %>
-        </div>
-        <div class="field">
-          <%= label_tag :author, "Pengarang" %>
-          <%= form.text_field :author, class: 'form-control' %>
-        </div>
-        <div class="field">
-          <%= label_tag :genre_buku, "Genre Buku" %>
-          <%= form.text_field :genre_buku, class: 'form-control' %>
-        </div>
-        <div class="field">
-          <%= form.label :rating %>
-          <%= form.number_field :rating, class: 'form-control' %>
-        </div>
-        <div class="actions">
-          <%= form.submit 'Submit', :class => 'btn btn-link bg-primary mt-3 text-light btn-block' %>
-        </div>
-        <div class="field">
-          <%= link_to 'Back',books_path, class: 'btn btn-link bg-danger mt-3 text-light btn-block' %>
+        <div class="col-sm-12 col-lg-6 offset-lg-3">
+            <h1 className="font-weight-normal mb-5"> Add Buku.</h1>
+            <div class="field">
+                <%= label_tag :judul_buku, "judul buku" %>
+                <%= form.text_field :judul_buku, class: 'form-control' %>
+            </div>
+            <div class="field">
+                <%= label_tag :author, "Pengarang" %>
+                <%= form.text_field :author, class: 'form-control' %>
+            </div>
+            <div class="field">
+                <%= label_tag :genre_buku, "Genre Buku" %>
+                <%= form.text_field :genre_buku, class: 'form-control' %>
+            </div>
+            <div class="field">
+                <%= form.label :rating %>
+                <%= form.number_field :rating, class: 'form-control' %>
+            </div>
+            <div class="field">
+                <%= form.label :image %>
+                <%= form.file_field :image %>
+            </div>
+            <div class="actions">
+                <%= form.submit 'Submit', :class => 'btn btn-link bg-primary mt-3 text-light btn-block' %>
+            </div>
+            <div class="field">
+                <%= link_to 'Back',books_path, class: 'btn btn-link bg-danger mt-3 text-light btn-block' %>
+            </div>
         </div>
     </div>
-  </div>
 </div>
 
 <% end %>

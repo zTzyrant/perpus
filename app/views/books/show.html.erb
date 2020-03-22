@@ -1,23 +1,26 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@book.image.url, alt: 'Image') if @book.image? %>
+
 <p>
-  <strong>Judul buku:</strong>
-  <%= @book.judul_buku %>
+    <strong>Judul buku:</strong>
+    <%= @book.judul_buku %>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @book.author %>
+    <strong>Author:</strong>
+    <%= @book.author %>
 </p>
 
 <p>
-  <strong>Genre buku:</strong>
-  <%= @book.genre_buku %>
+    <strong>Genre buku:</strong>
+    <%= @book.genre_buku %>
 </p>
 
 <p>
-  <strong>Rating:</strong>
-  <%= @book.rating %>
+    <strong>Rating:</strong>
+    <%= @book.rating %>
 </p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

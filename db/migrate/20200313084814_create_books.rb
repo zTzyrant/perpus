@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.string :author
       t.string :genre_buku
       t.integer :rating
+      t.string :image
 
       t.timestamps
     end
