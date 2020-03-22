@@ -10,7 +10,13 @@ Rails.application.routes.draw do
 
   get 'authorized', to: 'sessions#page_requires_login'
 
+  delete '/logout' => 'sessions#destroy'
 
+  get '/logout' => 'sessions#destroy'
+
+  resources :users do
+    resources :recruiters
+  end
   resources :users
   resources :pinjams
   get 'welcome/index'
