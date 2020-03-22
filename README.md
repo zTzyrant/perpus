@@ -8,6 +8,8 @@ This repository is made for learning and under development.
 
 * Database sqlite
 
+* React-Rails
+
 * Database initialization
   ```
   rake db:create
