@@ -8,9 +8,11 @@ class SessionsController < ApplicationController
        @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
-          redirect_to '/welcome'
+          redirect_to root_path
+          flash[:success] = "Login Successfully... Welcome"
         else 
           redirect_to '/login'
+          flash[:error] = "Something Error"
         end
   end
 
@@ -25,7 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy     
     session[:user_id] = nil         
-    redirect_to '/welcome' 
+    redirect_to root_path 
   end
   
 end

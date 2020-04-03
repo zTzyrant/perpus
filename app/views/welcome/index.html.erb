@@ -23,14 +23,23 @@
     background: #aaa;
 }
 </style>
-
-
+<% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <%= value %> <%= current_user.username %>
+      </div>
+<% end %>
 <nav id="main-navbar" class="navbar navbar-expand-md navbar-dark bg-dark py-0">
   <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <span class="d-none" >PERPUS</span>
-      <img src="#" class="main-logo d-none d-md-inline" alt="Perpus Logo">
-      <img src="#" class="small-logo d-inline d-md-none" alt="perpus logo">
+    <a class="nav-link p-4" href="index.html">
+       <% if logged_in? %>
+          <% if current_user %>
+              <span><%= current_user.username %></span>
+          <% end %>
+        <% else %>
+              <span>PERPUS</span>
+        <% end %>
+   
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
     <span class="navbar-toggler-icon"></span>
@@ -40,7 +49,13 @@
       <ul class="navbar-nav ml-auto"></ul>
         <%= link_to "List Buku", books_path(@books), :class => "nav-link p-4 active" %>
         <%= link_to "Pinjam Buku", pinjams_path(@pinjams), :class => "nav-link p-4 active" %>
-        <a class="nav-link p-4 active" href="index.html">Logout</a>
+        <% if logged_in? %>
+          <% if current_user %>
+          <%= link_to "Log out", logout_path, method: "delete", class: "nav-link p-4 active"%>
+          <% end %>
+        <% else %>
+          <%= link_to "Login", login_path, class: "nav-link p-4 active" %>
+        <% end %>
       </div>
     </div>
 </nav>
